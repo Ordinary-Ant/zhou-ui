@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createComponent } from '../index'
+import { createComponent } from '@/index'
 import App from './App.vue'
 
 

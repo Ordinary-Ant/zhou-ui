@@ -1,1 +1,1 @@
-export { default as Button } from './Button/button.vue'
+export { default as ZButton } from './button/ZButton.vue'
