@@ -1,9 +1,9 @@
 <script lang="ts">
-import { computed } from "vue";
-export default { name: "ZButton" };
+export default { name: "ZButton" }
 </script>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { string, bool } from "vue-types";
 
 const props = defineProps({
@@ -16,7 +16,9 @@ const props = defineProps({
   icon: string().def(""),
   loading: bool().def(false),
   size: string().def(""),
-  color: string().def("")
+  color: string().def(""),
+  dog: bool().def(false),
+  cat: bool().def(false),
 });
 
 const border_type = computed(() => {
@@ -31,11 +33,13 @@ const border_type = computed(() => {
 
 <template>
   <button
-    class="z-button"
     :class="[
+      'z-button',
       props.type && `z-button--${props.type}`,
       props.size && `z-button--${props.size}`,
       props.disabled && `is_disabled--${props.type}`,
+      props.dog && 'z-button--dog',
+      props.dog && 'z-button--cat',
       `is_${border_type}`
     ]"
     :disabled="props.disabled"
@@ -112,6 +116,9 @@ const border_type = computed(() => {
       color: #fff;
     }
   }
+  &--dog {
+    
+  }
 }
 .is_plain {
   border-radius: 10px;
@@ -136,10 +143,10 @@ const border_type = computed(() => {
     }
   }
   &--success {
-    background-color: #3e6b27;
+    background-color: #b3e19d;
     cursor: not-allowed;
     &:hover {
-      background-color: #3e6b27;
+      background-color: #b3e19d;
     }
   }
   &--info {
